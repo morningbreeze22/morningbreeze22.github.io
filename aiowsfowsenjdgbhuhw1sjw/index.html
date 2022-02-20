@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="cards">abd</div>
+    <div id="cards"></div>
 </body>
 
 <footer>
@@ -27,14 +27,9 @@
 </footer>
 
 <script>
-    fetch("../jsonfiles/data.json")
-        .then(response=>{
-            if(!response.ok){
-                console.log("network has sth wrong...")
-            }
-        })
+    fetch("./jsonfiles/data.json")
+        .then(res => {return res.json(); })
         .then(data => {
-            document.getElementById("cards").innerHTML+=data;
-            console.log(data);
+            document.getElementById("cards").innerHTML+=JSON.stringify(data);
         });
 </script>
