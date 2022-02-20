@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+<title>Jiawei Song CSCI 571 homework</title>
+<style>
+    h1{
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+    }
+    div{
+        margin: 0 auto;
+        border-style: double;
+        text-align: center;
+        width: 50%;
+    }
+</style>
+</head>
+
+<body>
+    <div id="cards">abd</div>
+</body>
+
+<footer>
+
+</footer>
+
+<script>
+    fetch("../jsonfiles/data.json")
+        .then(response=>{
+            if(!response.ok){
+                console.log("network has sth wrong...")
+            }
+        })
+        .then(data => {
+            document.getElementById("cards").innerHTML+=data;
+            console.log(data);
+        });
+</script>
