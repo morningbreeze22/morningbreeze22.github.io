@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 
 <head>
-<title>Jiawei Song CSCI 571 homework</title>
-<style>
-    h1{
-        text-align: center;
-    }
-    h2{
-        text-align: center;
-    }
-    div{
-        margin: 0 auto;
-        border-style: double;
-        text-align: center;
-        width: 50%;
-    }
-</style>
+<title>Jiawei Song CSCI 571 homework1</title>
+<link href="./css/header.css" rel="stylesheet" type="text/css">
+
 </head>
 
+
 <body>
-    <div id="cards"></div>
+   <div class="header">
+    <a class="header-a" href="">Home</a>
+    &nbsp &nbsp &nbsp
+    <a class="header-a" href="">Explore</a>
+    &nbsp &nbsp &nbsp
+    <a class="header-a" href="">Contact</a>
+   </div>
+
+   <div class="top-img">
+        LA - The City of Angels
+   </div>
+
+   <div class="hcards">
+       <div class="center-div" id="sec2"></div>
+   </div>
 </body>
 
 <footer>
@@ -27,9 +30,29 @@
 </footer>
 
 <script>
+
+    function handlesec2(d){
+
+        var sec2 = document.getElementById("sec2");
+        
+        for(var i=0;i<d.length;i++){
+            let newdiv = document.createElement("div");
+            newdiv.className="hcard";
+            //newdiv.innerHTML = "<p>" + JSON.stringify(d[i]) + "</p>";
+            var i = `<img src="./images/`+ d[i]["image"] + `" width="230px height="230px">`;
+            console.log(i);
+            newdiv.innerHTML += i;
+            newdiv.innerHTML += `abc`;
+            sec2.appendChild(newdiv);
+            //console.log(d[i]);
+        }
+    }
+
     fetch("./jsonfiles/data.json")
         .then(res => {return res.json(); })
         .then(data => {
-            document.getElementById("cards").innerHTML+=JSON.stringify(data);
+            for(var key in data){
+                if(key==="section2") handlesec2(data[key]);
+            }
         });
 </script>
