@@ -1,23 +1,25 @@
 body {
   margin: 0px;
   font-size: 0px;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
 }
 
 .header {
   padding: 23px 0px;
   margin: 0px;
   text-align: center;
-  background: black;
+  background: #12141b;
   font-size: 25px;
   width: 1080px;
   height: 40px;
+  border-top: 1px solid #82444d;
   display: block;
 }
 
 .header-a {
   text-decoration: none;
   color: white;
-  font-family: "Comfortaa, sans-serif";
+  font-family: "Comfortaa", "Montserrat", sans-serif;
   text-shadow: 1px 2px #ef7720;
 }
 
@@ -33,9 +35,10 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 0 -400px;
-  font-family: "Comfortaa, sans-serif";
+  font-family: "Comfortaa", "Montserrat", sans-serif;
   font-size: 35px;
-  color: #e57f3a;
+  font-weight: bold;
+  color: #ec6b16;
   text-shadow: 0.5px 0.5px white;
   width: 1080px;
   height: 250px;
@@ -45,7 +48,7 @@ body {
 .hcards {
   background-color: #222529;
   width: 1080px;
-  height: 650px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,17 +56,112 @@ body {
 
 .center-div {
   width: 800px;
-  height: 500px;
+  height: 550px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .hcard {
-  width: 250px;
-  height: 350px;
-  background-color: black;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  width: 260px;
+  height: 370px;
+  background-color: #12141b;
   color: white;
   font-size: 16px;
-  font-family: "Comfortaa, sans-serif";
+  line-height: 80%;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
+}
+
+.text {
+  font-size: 12px;
+  line-height: 135%;
+}
+
+.text2 {
+  font-size: 12px;
+  line-height: 135%;
+  text-align: justify;
+}
+
+.hcards2 {
+  background-color: #12141b;
+  width: 1080px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-div2 {
+  width: 850px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hcard2 {
+  width: 400px;
+  height: 200px;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
+  color: white;
+}
+
+.hcards3 {
+  background-color: #222529;
+  width: 1080px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-div3 {
+  width: 850px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.hcard3 {
+  width: 800px;
+  height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
+  color: white;
+}
+
+footer {
+  height: 190px;
+  width: 1080px;
+  background-color: #12141b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  width: 400px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.infolink {
+  text-decoration: none;
+  color: white;
+  font-family: "Comfortaa", "Montserrat", sans-serif;
+}
+
+.infolink:hover {
+  text-decoration: underline;
 }

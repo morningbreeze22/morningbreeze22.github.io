@@ -2,19 +2,22 @@
 
 <head>
 <title>Jiawei Song CSCI 571 homework1</title>
+<!-- css file written by me -->
 <link href="./css/header.css" rel="stylesheet" type="text/css">
 
+<!-- font used in this hw -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 </head>
 
 
 <body>
-   <div class="header">
-    <a class="header-a" href="">Home</a>
-    &nbsp &nbsp &nbsp
-    <a class="header-a" href="">Explore</a>
-    &nbsp &nbsp &nbsp
-    <a class="header-a" href="">Contact</a>
-   </div>
+    <div class="header">
+        <a class="header-a" href="index.html">Home</a>
+        &nbsp &nbsp &nbsp
+        <a class="header-a" href="not-found.html">Explore</a>
+        &nbsp &nbsp &nbsp
+        <a class="header-a" href="not-found.html">Contact</a>
+    </div>
 
    <div class="top-img">
         LA - The City of Angels
@@ -23,29 +26,141 @@
    <div class="hcards">
        <div class="center-div" id="sec2"></div>
    </div>
+
+   <div class="hcards2">
+       <div class="center-div2" id="sec3"></div>
+
+   </div>
+
+   <div class="hcards3">
+       <div class="center-div3" id="sec4"></div>
+   </div>
 </body>
 
 <footer>
-
+    <div id="quote" class="footer-div">
+        <p> Tip the world over on its side and everything loose will land in Los Angeles.</p>
+        <p> - Frank Lloyd Wright</p>
+    </div>
+    <div id="info" class="footer-div" height="">
+        <p font-size="14px">Designed by</p>
+        <p> Jiawei Song</p>
+        <a href="mailto: jiaweis@usc.edu" class="infolink">jiaweis@usc.edu</a>
+        <br>
+        <a href="tel: 123-456-7890" class="infolink">(+1)123 456 7890</a>
+    </div>
 </footer>
 
 <script>
-
+    
     function handlesec2(d){
 
         var sec2 = document.getElementById("sec2");
-        
-        for(var i=0;i<d.length;i++){
-            let newdiv = document.createElement("div");
+        for(let i=0;i<d.length;i++){
+
+            var c = d[i];
+            var newdiv = document.createElement("div");
             newdiv.className="hcard";
-            //newdiv.innerHTML = "<p>" + JSON.stringify(d[i]) + "</p>";
-            var i = `<img src="./images/`+ d[i]["image"] + `" width="230px height="230px">`;
-            console.log(i);
-            newdiv.innerHTML += i;
-            newdiv.innerHTML += `abc`;
+
+            var im = `<img src="./images/`+ c["image"] + `" width="220px" height="150px">`;
+            var h = `<p>` + c["heading"] + `</p>`;
+            var p = `<p class="text">` + c["text"] + `</p>`;
+        
+            newdiv.innerHTML += im;
+            newdiv.innerHTML += h;
+            newdiv.innerHTML += p;
+
             sec2.appendChild(newdiv);
-            //console.log(d[i]);
         }
+    }
+
+    function handlesec3(d){
+        var t = d["text"];
+        var sec3 = document.getElementById("sec3");
+        
+        //create text div
+        var newdiv = document.createElement("div");
+        newdiv.className = "hcard2";
+        for(let i=0;i<t.length;i++){
+            newdiv.innerHTML += `<p class="text2">` + t[i] + `</p>`;;
+        }
+        sec3.appendChild(newdiv);
+        
+        //create img div
+        var newdiv = document.createElement("div");
+        newdiv.className = "hcard2";
+
+        var im = `<img src="./images/lasky.png" width="400px" height="220px">`;
+        newdiv.innerHTML = im;
+
+        sec3.appendChild(newdiv);
+        
+    }
+
+    function handlesec4(d){
+        var sec4 = document.getElementById("sec4");
+        for(let i=0;i<d.length;i++){
+            var c = d[i];
+            var newdiv = document.createElement("div");
+            newdiv.className = "hcard3";
+            
+            //img on left
+            if(i%2==0){
+                //img
+                var im = document.createElement("img");
+                im.src="./images/" + c["image"];
+                im.height = 180;
+                im.width =  270;
+                newdiv.appendChild(im);
+                
+                var textdiv = document.createElement("div");
+                textdiv.style.height = "180px";
+                textdiv.style.width = "500px";
+                newdiv.appendChild(textdiv);
+                //title
+                var t = document.createElement("p");
+                t.innerHTML = c["heading"];
+                t.style.margin="0";
+                t.style.padding="0";
+                textdiv.appendChild(t);
+                //content
+                var t2 = document.createElement("p");
+                t2.innerHTML = c["text"];
+                t2.className = "text2";
+                t2.style.lineHeight = "140%";
+                textdiv.appendChild(t2);
+            }
+            else{
+                var textdiv = document.createElement("div");
+                textdiv.style.height = "180px";
+                textdiv.style.width = "500px";
+                newdiv.appendChild(textdiv);
+                //title
+                var t = document.createElement("p");
+                t.innerHTML = c["heading"];
+                t.style.margin="0";
+                t.style.padding="0";
+                t.style.textAlign="right";
+                textdiv.appendChild(t);
+                //content
+                var t2 = document.createElement("p");
+                t2.innerHTML = c["text"];
+                t2.className = "text2";
+                t2.style.lineHeight = "140%";
+                textdiv.appendChild(t2);
+
+                //img
+                var im = document.createElement("img");
+                im.src="./images/" + c["image"];
+                im.height = 180;
+                im.width =  270;
+                newdiv.appendChild(im);
+            }
+
+            sec4.appendChild(newdiv);
+            
+        }
+
     }
 
     fetch("./jsonfiles/data.json")
@@ -53,6 +168,8 @@
         .then(data => {
             for(var key in data){
                 if(key==="section2") handlesec2(data[key]);
+                if(key==="section3") handlesec3(data[key]);
+                if(key==="section4") handlesec4(data[key]);
             }
         });
 </script>
