@@ -65,8 +65,8 @@ body {
 .hcard {
   box-sizing: border-box;
   padding: 15px 15px;
-  width: 260px;
-  height: 370px;
+  width: 250px;
+  height: 380px;
   background-color: #12141b;
   color: white;
   font-size: 16px;
@@ -76,7 +76,7 @@ body {
 
 .text {
   font-size: 12px;
-  line-height: 135%;
+  line-height: 130%;
 }
 
 .text2 {
@@ -130,7 +130,7 @@ body {
 
 .hcard3 {
   width: 800px;
-  height: 180px;
+  height: 160px;
   display: flex;
   justify-content: space-between;
   align-items: center;

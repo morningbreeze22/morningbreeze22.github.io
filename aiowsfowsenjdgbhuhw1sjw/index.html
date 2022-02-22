@@ -63,7 +63,7 @@
             newdiv.className="hcard";
 
             var im = `<img src="./images/`+ c["image"] + `" width="220px" height="150px">`;
-            var h = `<p>` + c["heading"] + `</p>`;
+            var h = `<p style="margin-top:14px">` + c["heading"] + `</p>`;
             var p = `<p class="text">` + c["text"] + `</p>`;
         
             newdiv.innerHTML += im;
@@ -109,12 +109,12 @@
                 //img
                 var im = document.createElement("img");
                 im.src="./images/" + c["image"];
-                im.height = 180;
+                im.height = 160;
                 im.width =  270;
                 newdiv.appendChild(im);
                 
                 var textdiv = document.createElement("div");
-                textdiv.style.height = "180px";
+                textdiv.style.height = "160px";
                 textdiv.style.width = "500px";
                 newdiv.appendChild(textdiv);
                 //title
@@ -132,7 +132,7 @@
             }
             else{
                 var textdiv = document.createElement("div");
-                textdiv.style.height = "180px";
+                textdiv.style.height = "160px";
                 textdiv.style.width = "500px";
                 newdiv.appendChild(textdiv);
                 //title
@@ -152,7 +152,7 @@
                 //img
                 var im = document.createElement("img");
                 im.src="./images/" + c["image"];
-                im.height = 180;
+                im.height = 160;
                 im.width =  270;
                 newdiv.appendChild(im);
             }
