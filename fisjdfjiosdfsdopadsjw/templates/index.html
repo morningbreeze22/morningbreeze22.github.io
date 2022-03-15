@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Jiawei Song CSCI 571 homework2</title>
+
+        <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css">
+    </head>
+
+
+    <body>
+
+        <div class="b">
+            <div class="tit">Blood Pressure Predictor</div>
+
+            <div class="descrip">Fill out the form to get your 
+                Blood Pressure estimate!
+            </div>
+           
+            <div class="f">
+                <form id="input" class="input-f" method="post">
+                    <div class="input-line">
+                        <label for="age">Age: <span style="color:red">*</span> </label>
+                        <input type="number" name="age" id="age" placeholder="Enter age in years" required>
+                    </div>
+                    <div class="input-line">
+                        <label for="weight">Weight: <span style="color:red">*</span> </label>
+                        <input type="number" name="weight" id="age" step="0.01" placeholder="Enter weight in kg" required>
+                    </div>
+                    <div class="input-line">
+                        <input class="submit-but" type="submit" value="Calculate">
+                    </div>
+
+                    <div class="result" id="output">
+                        {{result}}
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+        
+    </body>
+
+    <script>
+
+    </script>
+
+
+</html>

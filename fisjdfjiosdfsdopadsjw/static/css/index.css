@@ -1,0 +1,61 @@
+body {
+  margin: 0px;
+  font-size: 0px;
+  width: 980px;
+  height: 800px;
+  font-family: "Times New Roman", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tit {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8b0000;
+  text-align: center;
+}
+
+.descrip {
+  font-size: 18px;
+  color: #8b0000;
+  text-align: center;
+  font-weight: 500;
+}
+
+.input-f {
+  text-align: center;
+  margin: 20px;
+}
+
+.input-line {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 16px;
+  width: 400px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  font-weight: bold;
+}
+
+input {
+  vertical-align: top;
+}
+
+.submit-but {
+  width: 120px;
+  height: 30px;
+  background-color: #506ba7;
+  color: white;
+}
+
+.result {
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
